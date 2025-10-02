@@ -90,7 +90,7 @@ class _CardPageState extends State<CardPage> {
 
   bool checkLike(int index) {
     bool check;
-    check = fav.any((said) => said["text"] == three[index]["text"]);
+    check = fav.any((said) => said["md"] == three[index]["md"]);
     return check;
   }
 
@@ -106,7 +106,7 @@ class _CardPageState extends State<CardPage> {
         toolbarHeight: 70,
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(
-          'd3letters',
+          'd3dev',
           style: GoogleFonts.merriweather(fontSize: 20, color: Colors.white),
         ),
         centerTitle: false,
@@ -126,7 +126,7 @@ class _CardPageState extends State<CardPage> {
                     DateTime.now().toString().substring(0, 10) + " Letter",
                     style: GoogleFonts.merriweather(
                       fontSize: 20,
-                      color: Color.fromARGB(255, 253, 253, 253),
+                      color: Colors.white,
                     ),
                     textAlign: TextAlign.start,
                   ),
@@ -176,7 +176,7 @@ class _CardPageState extends State<CardPage> {
                         'favorite',
                         style: GoogleFonts.merriweather(
                           fontSize: 20,
-                          color: Color.fromARGB(246, 255, 255, 255),
+                          color: Colors.white,
                         ),
                       ),
                     ),
@@ -204,7 +204,7 @@ class _CardPageState extends State<CardPage> {
                         dotSecondaryColor: Theme.of(context).colorScheme.surface,
                       ),
                       circleColor: CircleColor(
-                        start: Color.fromARGB(246, 255, 225, 28),
+                        start: Colors.yellow,
                         end: Theme.of(context).colorScheme.inversePrimary,
                       ),
                       isLiked: checkLike(currentIndexMy),

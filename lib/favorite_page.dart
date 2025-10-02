@@ -20,7 +20,7 @@ class _FavoritePageState extends State<FavoritePage> {
     for (int i = 0; i < widget.fav.length; i++) {
       favorite.add(
         ListTile(
-          key:ValueKey(widget.fav[i]["text"]),
+          key:ValueKey(widget.fav[i]["md"]),
           selected: false,
           title: Text(
             widget.fav[i]["md"],
