@@ -23,11 +23,11 @@ class _FavoritePageState extends State<FavoritePage> {
           key:ValueKey(widget.fav[i]["text"]),
           selected: false,
           title: Text(
-            widget.fav[i]["text"],
+            widget.fav[i]["md"],
             style: GoogleFonts.orbit(color: Color.fromARGB(255, 0, 0, 0)),
           ),
           subtitle: Text(
-            widget.fav[i]['author'],
+            widget.fav[i]['subject'],
             style: GoogleFonts.orbit(color: Theme.of(context).colorScheme.primary),
           ),
           tileColor: i % 2 == 0

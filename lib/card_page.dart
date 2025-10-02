@@ -19,23 +19,24 @@ class CardPage extends StatefulWidget {
 class _CardPageState extends State<CardPage> {
   List<Map> fav = [];
   List<Map> three = [
-    {"text": "편지 오는 중...", "author": "taery"},
-    {"text": "편지 오는 중...", "author": "taery"},
-    {"text": "편지 오는 중...", "author": "taery"},
+    {"md": "편지 오는 중...", "subject": "taery"},
+    {"md": "편지 오는 중...", "subject": "taery"},
+    {"md": "편지 오는 중...", "subject": "taery"},
   ];
   int cardValue = 0;
   List<MyCard> cards = [
-    MyCard(myColor: Color.fromARGB(255, 141, 207, 240), said: {"text": "text", "author": "dev"}),
-    MyCard(myColor: Color.fromARGB(255, 255, 211, 208), said: {"text": "text", "author": "dev"}),
-    MyCard(myColor: Color.fromARGB(255, 250, 219, 255), said: {"text": "text", "author": "dev"}),
+    MyCard(myColor: Color.fromARGB(255, 141, 207, 240), said: {"md": "text", "subject": "dev"}),
+    MyCard(myColor: Color.fromARGB(255, 255, 211, 208), said: {"md": "text", "subject": "dev"}),
+    MyCard(myColor: Color.fromARGB(255, 250, 219, 255), said: {"md": "text", "subject": "dev"}),
   ];
   Future<void> loadSaids() async {
     final String beforeDate = await loadDate();
     print(beforeDate);
     final threeCache = await loadThree();
     if (DateTime.now().toString().substring(0, 10) == beforeDate &&
-        threeCache[1]["text"] != "null" &&
-        threeCache[1]["text"] != "letter") {
+        threeCache[1]["md"] != "null" &&
+        threeCache[1]["subject"] != "letter" &&
+        false) {
       // threeCache가 있고, date 가 안 바뀌었다.
       print(threeCache[1]);
       print("goCache");
@@ -48,11 +49,11 @@ class _CardPageState extends State<CardPage> {
     print("noCache");
     final response = await http.get(
       Uri.parse(
-        'https://gist.githubusercontent.com/TaeKyungg2/dd77b00e3929e3feb64be5bd411096cf/raw/saying.json',
+        'https://gist.githubusercontent.com/TaeKyungg2/dd77b00e3929e3feb64be5bd411096cf/raw/dev.json',
       ),
     );
     if (response.statusCode == 200) {
-      print("cache successful");
+      print(response.body);
       int length;
       List<dynamic> saids = jsonDecode(response.body);
       length = saids.length;

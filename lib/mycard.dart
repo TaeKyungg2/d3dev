@@ -16,7 +16,7 @@ class MyCard extends StatelessWidget {
           '${said!['md']}\n- ${said!['subject']}',
           style: GoogleFonts.orbit(
             fontSize: 20,
-            color: Color.fromARGB(246, 0, 0, 0),
+            color: Colors.black,
           ),
         ),
       ),
