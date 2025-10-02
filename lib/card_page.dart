@@ -5,7 +5,7 @@ import 'cache.dart';
 import 'package:http/http.dart' as http;
 import 'dart:math';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
-import 'package:d3letters/favorite_page.dart';
+import 'favorite_page.dart';
 import 'package:like_button/like_button.dart';
 import 'mycard.dart';
 

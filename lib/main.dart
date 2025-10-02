@@ -25,12 +25,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'd3letters',
+      title: 'd3dev',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 38, 0, 226)),
+        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 255, 189, 22)),
       ),
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(title: 'd3lettersHome'),
+      home: const MyHomePage(title: 'd3devhome'),
     );
   }
 }
@@ -49,7 +49,7 @@ class MyHomePage extends StatelessWidget {
             fit: BoxFit.cover,
             width: double.infinity,
             height: double.infinity,
-            //colorFilter: ColorFilter.mode(Theme.of(context).colorScheme.primary, BlendMode.screen),
+            //colorFilter: ColorFilter.mode(const Color.fromARGB(255, 0, 171, 23), BlendMode.colorDodge),
           ),
           Center(
             child: Column(
@@ -65,7 +65,7 @@ class MyHomePage extends StatelessWidget {
                     style: GoogleFonts.gowunDodum(
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 246, 242, 242),
+                      color: Colors.white,
                     ),
                   ),
                 ),
