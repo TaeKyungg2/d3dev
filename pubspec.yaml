@@ -1,0 +1,40 @@
+name: "d3dev"
+description: "1 day 3 dev letters."
+publish_to: 'none' 
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.0
+dependencies:
+  flutter:
+    
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  pretty_animated_buttons: ^0.0.2
+  google_fonts: ^6.3.1
+  http: ^1.5.0
+  flutter_card_swiper: ^7.0.2
+  rename: ^3.1.0
+  like_button: ^2.1.0
+  path_provider: ^2.1.5
+  provider: ^6.1.5+1
+  flutter_svg: ^2.2.1
+
+dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon_white.png"
+  remove_alpha_ios: true
+
+flutter:
+  assets:
+    - assets/
+
+  uses-material-design: true
