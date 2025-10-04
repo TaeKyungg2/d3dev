@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'd3dev',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 255, 189, 22)),
+        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 25, 255, 209)),
       ),
       debugShowCheckedModeBanner: false,
       home: const MyHomePage(title: 'd3devhome'),

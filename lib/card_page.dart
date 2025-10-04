@@ -19,15 +19,24 @@ class CardPage extends StatefulWidget {
 class _CardPageState extends State<CardPage> {
   List<Map> fav = [];
   List<Map> three = [
-    {"md": "편지 오는 중...", "subject": "taery"},
-    {"md": "편지 오는 중...", "subject": "taery"},
-    {"md": "편지 오는 중...", "subject": "taery"},
+    {"main": "편지 오는 중...", "title": "taery"},
+    {"main": "편지 오는 중...", "title": "taery"},
+    {"main": "편지 오는 중...", "title": "taery"},
   ];
   int cardValue = 0;
   List<MyCard> cards = [
-    MyCard(myColor: Color.fromARGB(255, 141, 207, 240), said: {"md": "text", "subject": "dev"}),
-    MyCard(myColor: Color.fromARGB(255, 255, 211, 208), said: {"md": "text", "subject": "dev"}),
-    MyCard(myColor: Color.fromARGB(255, 250, 219, 255), said: {"md": "text", "subject": "dev"}),
+    MyCard(
+      myColor: const Color.fromARGB(255, 239, 203, 255),
+      said: {"main": "편지 오는 중...", "title": "taery"},
+    ),
+    MyCard(
+      myColor: const Color.fromARGB(255, 255, 233, 151),
+      said: {"main": "편지 오는 중...", "title": "taery"},
+    ),
+    MyCard(
+      myColor: const Color.fromARGB(255, 180, 231, 255),
+      said: {"main": "편지 오는 중...", "title": "taery"},
+    ),
   ];
   Future<void> loadSaids() async {
     final String beforeDate = await loadDate();
@@ -35,8 +44,7 @@ class _CardPageState extends State<CardPage> {
     final threeCache = await loadThree();
     if (DateTime.now().toString().substring(0, 10) == beforeDate &&
         threeCache[1]["md"] != "null" &&
-        threeCache[1]["subject"] != "letter" &&
-        false) {
+        threeCache[1]["subject"] != "letter") {
       // threeCache가 있고, date 가 안 바뀌었다.
       print(threeCache[1]);
       print("goCache");
@@ -90,7 +98,7 @@ class _CardPageState extends State<CardPage> {
 
   bool checkLike(int index) {
     bool check;
-    check = fav.any((said) => said["md"] == three[index]["md"]);
+    check = fav.any((said) => said["main"] == three[index]["main"]);
     return check;
   }
 
@@ -105,10 +113,7 @@ class _CardPageState extends State<CardPage> {
       appBar: AppBar(
         toolbarHeight: 70,
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(
-          'd3dev',
-          style: GoogleFonts.merriweather(fontSize: 20, color: Colors.white),
-        ),
+        title: Text('d3dev', style: GoogleFonts.merriweather(fontSize: 20, color: Colors.white)),
         centerTitle: false,
       ),
       body: Center(
@@ -124,10 +129,7 @@ class _CardPageState extends State<CardPage> {
                   decoration: BoxDecoration(color: Theme.of(context).colorScheme.inversePrimary),
                   child: Text(
                     DateTime.now().toString().substring(0, 10) + " Letter",
-                    style: GoogleFonts.merriweather(
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
+                    style: GoogleFonts.merriweather(fontSize: 20, color: Colors.white),
                     textAlign: TextAlign.start,
                   ),
                 ),
@@ -174,10 +176,7 @@ class _CardPageState extends State<CardPage> {
                       padding: EdgeInsets.all(20),
                       child: Text(
                         'favorite',
-                        style: GoogleFonts.merriweather(
-                          fontSize: 20,
-                          color: Colors.white,
-                        ),
+                        style: GoogleFonts.merriweather(fontSize: 20, color: Colors.white),
                       ),
                     ),
                   ),

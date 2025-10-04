@@ -13,7 +13,7 @@ class MyCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(4.0),
         child: Text(
-          '${said!['md']}\n- ${said!['subject']}',
+          '${said!['main']}\n- ${said!['title']}',
           style: GoogleFonts.orbit(
             fontSize: 20,
             color: Colors.black,
